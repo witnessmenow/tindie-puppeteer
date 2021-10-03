@@ -6,6 +6,7 @@ const fs = require('fs')
 var message = require('./message.js');
 
 const waitBetweenPages = 500;
+const timeOutValue = 20000;
 
 // You can set this to true if you feel comfortable with it, im not sure its a good idea...
 automaticSubmit = false;
@@ -49,9 +50,9 @@ async function markAsShipped(browser, data) {
     await page.keyboard.type(messageText);
 
     // Adding Tracking
-    if (data.trackingNumber) {
+    if (data.TrackingNumber) {
         await page.focus('input#id_tracking_code');
-        await page.keyboard.type(data.trackingNumber);
+        await page.keyboard.type(data.TrackingNumber);
     }
 
     if (automaticSubmit) {
@@ -87,11 +88,11 @@ csvData = [];
 
 console.log("Launching Browser");
 launchBrowser().then(brow => {
-    fs.createReadStream('data.csv')
+    //fs.createReadStream('data.csv')
+    fs.createReadStream('../AnPostPuppet/track-data.csv')
         .pipe(csv())
         .on('data', (data) => csvData.push(data))
         .on('end', () => {
             processData(brow, csvData);
-            console.log('Added All');
         });
 });

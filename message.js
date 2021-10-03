@@ -9,8 +9,8 @@ function generateMessage(data) {
     // When it shipped
     message += "Thank you for the order! It shipped " + whenItShipped + " and will hopefully be with you soon.\n\n"
 
-    if (data.trackingNumber) {
-        message += "Your orders tracking number is: " + data.trackingNumber + "\n\n"
+    if (data.TrackingNumber) {
+        message += "Your orders tracking number is: " + data.TrackingNumber + "\n\n"
     }
 
     // Where to get info

@@ -1,3 +1,3 @@
-OrderNumber,trackingNumber,Type,Destination,WeightCat,Contents,Service,FirstName,LastName,CompanyName,Email,Phone,AddressLine1,AddressLine2,CityState,Postcode,ContentCategory,ItemDescription0,Quantity0,Value0,Weight0,ItemDescription1,Quantity1,Value1,Weight1
+OrderNumber,TrackingNumber,Type,Destination,WeightCat,Contents,Service,FirstName,LastName,CompanyName,Email,Phone,AddressLine1,AddressLine2,CityState,Postcode,ContentCategory,ItemDescription0,Quantity0,Value0,Weight0,ItemDescription1,Quantity1,Value1,Weight1
 123456, ABC123456, Large,US,100,Other,Registered,Joe,Biden,The White House,hello@us.gov,555 5555 55,1600 Pennsylvania Avenue NW,Washington,DC,20500,Sale,Electronic Kit (No battery),1,15,0.05,,,,
 123678,,Large,US,100,Other,Registered,Brian,Lough,,hello@us.gov,555 5555 55,1600 Pennsylvania Avenue NW,Washington,DC,20500,Sale,Electronic Kit (No battery),1,15,0.05,USB Connector (No Battery),5,7,0.02
