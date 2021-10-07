@@ -82,17 +82,20 @@ async function processData(browser, allData) {
     for (const d of allData) {
         await markAsShipped(browser, d);
     }
+    console.log("Done")
 }
 
 csvData = [];
 
 console.log("Launching Browser");
 launchBrowser().then(brow => {
-    //fs.createReadStream('data.csv')
-    fs.createReadStream('../AnPostPuppet/track-data.csv')
+    fs.createReadStream('data.csv')
+        //fs.createReadStream('../AnPostPuppet/track-data.csv')
+        //fs.createReadStream('../AnPostPuppet/data-standard.csv')
         .pipe(csv())
         .on('data', (data) => csvData.push(data))
         .on('end', () => {
-            processData(brow, csvData);
+            //reversing to starting with the oldest
+            processData(brow, csvData.reverse());
         });
 });

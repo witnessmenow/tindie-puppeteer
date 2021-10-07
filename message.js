@@ -15,6 +15,7 @@ function generateMessage(data) {
 
     // Where to get info
     message += "You can find instructions and information for the products here:\n"
+    message += "\n"
 
     message += infoForItems(data);
 
@@ -31,9 +32,25 @@ function generateMessage(data) {
 
 }
 
+const productInfo = {
+    "14727": "Power BLough-R: http://blough.ie/bloughr/",
+    "20719": "I2S Matrix Shield: https://github.com/witnessmenow/ESP32-i2s-Matrix-Shield",
+    "21280": "Flex-C-Friend: https://github.com/witnessmenow/ts100-flex-c-friend",
+    "16343": "D1 Mini Matrix Shield: http://blough.ie/d1mat/"
+}
+
+
 function infoForItems(data) {
-    // TODO:
-    return "";
+    let subMessage = "";
+    const skuArray = data.Sku.split("|");
+    skuArray.forEach(sku => {
+        if (productInfo[sku]) {
+            subMessage = subMessage + productInfo[sku] + "\n";
+        } else {
+            throw Error("Product SKU not recognized: " + sku);
+        }
+    });
+    return subMessage;
 }
 
 module.exports = {

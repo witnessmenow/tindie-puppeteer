@@ -4,7 +4,7 @@ Puppeteer automation of Tindie.com - For automatically marking things as shipped
 
 Unfortunately this functionality is not available through the Tindie API, so I've had to get creative!
 
-This is a work in progress, and **has not been tested by me yet end to end** (but it looks ok).
+This is a work in progress, but I have used it for a few orders now it seems to work well.
 
 This is provided with no warranty!
 
